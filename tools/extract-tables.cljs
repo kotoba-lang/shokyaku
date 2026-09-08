@@ -22,7 +22,7 @@
 ;; had no 別表. That must never look like a clean check.
 
 (ns extract-tables
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             ["node:fs" :as fs]))
 
 (def law-id "340M50000040015")
