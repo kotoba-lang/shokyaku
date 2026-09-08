@@ -16,7 +16,7 @@
 ;; The EDN file stays the source of truth. The generated namespace is a
 ;; projection, checked by `--check`, and it is what the library reads — no
 ;; runtime file access, no cwd assumption, works in a browser.
-(require '["node:fs" :as fs] '[clojure.string :as str])
+(require '["node:fs" :as fs] '[kotoba.lang.text :as str])
 
 (def edn-path "resources/kotoba/shokyaku/tables.edn")
 (def out-path "src/kotoba/shokyaku/embedded.cljc")
