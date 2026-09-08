@@ -72,7 +72,7 @@
     (旧定額法 / 旧定率法, 残存価額, a 95% ceiling and a five-year run-out).
     Read, not implemented, and recorded as out of scope rather than
     silently run through the current rules."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [clojure.set :as set]
             [kotoba.shokyaku.embedded :as embedded]))
 
