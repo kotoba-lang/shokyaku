@@ -109,12 +109,12 @@ Provisions read verbatim: 法人税法 **第三十一条第一項**; 施行令 *
 **第四十八条** (the pre-2007 regime) was read and deliberately not
 implemented.
 
-`tools/verify_citations.cljs` resolves the three law ids against
+`tools/verify_citations.cljk` resolves the three law ids against
 `kotoba-lang/jp.go.e-gov.elaws` and **refuses to report a verdict (exit 2)**
 when that corpus is absent, rather than reporting zero problems.
 
 ```
-$ nbb tools/verify_citations.cljs ../jp.go.e-gov.elaws
+$ nbb tools/verify_citations.cljk ../jp.go.e-gov.elaws
 CORPUS  ../jp.go.e-gov.elaws/index/laws.edn  9536 laws
 SCANNED  3
   ok   340AC0000000034  :law.status/superseded-revision  法人税法
@@ -213,17 +213,17 @@ appearance of portability.
 
 ```bash
 clojure -M:test                                   # JVM
-nbb --classpath src:test test/run_portable.cljs   # nbb
+nbb --classpath src:test test/run_portable.cljk   # nbb
 
 # and from a FOREIGN working directory, which is the one that matters
-cd /tmp/elsewhere && nbb --classpath "$REPO/src:$REPO/test" "$REPO/test/run_portable.cljs"
+cd /tmp/elsewhere && nbb --classpath "$REPO/src:$REPO/test" "$REPO/test/run_portable.cljk"
 ```
 
 All three: **33 tests, 517 assertions, 0 failures.**
 
 The tables live in `resources/kotoba/shokyaku/tables.edn` (the source of
 truth, and what a human edits) and are projected into
-`src/kotoba/shokyaku/embedded.cljc` by `tools/gen-embedded.cljs`, gated by
+`src/kotoba/shokyaku/embedded.cljk` by `tools/gen-embedded.cljk`, gated by
 `--check`. There is no runtime file access and no cwd assumption: a
 `resources/` read relative to the process's working directory is right while
 this library is the root project and wrong the moment it is a dependency —
@@ -233,8 +233,8 @@ back nil for all 159 of iso3166's assertions.
 ## Mutation testing
 
 ```bash
-nbb tools/check-mutations.cljs   # pre-flight: every :find occurs exactly once
-nbb tools/mutate.cljs            # 15 mutations
+nbb tools/check-mutations.cljk   # pre-flight: every :find occurs exactly once
+nbb tools/mutate.cljk            # 15 mutations
 ```
 
 **15 mutations, 15 killed, 0 survived.** The first blind run — mutations

@@ -5,12 +5,12 @@
 ;; branch nothing evaluates is the appearance of portability, not
 ;; portability — a check that cannot fail.
 ;;
-;;   nbb --classpath src:test test/run_portable.cljs
+;;   nbb --classpath src:test test/run_portable.cljk
 ;;
 ;; And it is run from a FOREIGN working directory in CI and by hand:
 ;;
 ;;   cd /tmp/elsewhere && nbb --classpath /path/to/src:/path/to/test \
-;;     /path/to/test/run_portable.cljs
+;;     /path/to/test/run_portable.cljk
 ;;
 ;; That is not ceremony. `kotoba-lang/technology` measured on 2026-08-18 that
 ;; a cwd-relative `resources/` read returns nil for every row the moment the
