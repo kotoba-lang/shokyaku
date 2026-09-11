@@ -5,13 +5,13 @@
  ;; a network client.
  ;;
  ;; The 耐用年数 and 償却率 tables are not a dependency either. They are
- ;; embedded as a generated projection (`tools/gen-embedded.cljs`, with a
+ ;; embedded as a generated projection (`tools/gen-embedded.cljk`, with a
  ;; `--check` gate) rather than read from `resources/` at runtime, because a
  ;; cwd-relative resource read works only while this library is the root
  ;; project — measured in `kotoba-lang/technology` on 2026-08-18.
  ;;
  ;; The e-Gov corpus (`kotoba-lang/jp.go.e-gov.elaws`) is not a dependency.
- ;; `tools/verify_citations.cljs` reads its index when it is present on disk
+ ;; `tools/verify_citations.cljk` reads its index when it is present on disk
  ;; and refuses to report a verdict when it is not — verification is an
  ;; operator's step, not something a consumer carries.
  :deps {

@@ -84,7 +84,7 @@
   "Primary sources, keyed by id.
 
   `:law/id` is the e-Gov law id — it is what makes a citation checkable
-  rather than merely reachable. `tools/verify_citations.cljs` resolves these
+  rather than merely reachable. `tools/verify_citations.cljk` resolves these
   against the `kotoba-lang/jp.go.e-gov.elaws` corpus index and refuses to
   report a verdict when that corpus is absent."
   {:jp/hojinzei-ho
@@ -603,7 +603,7 @@
 (defn source-urls [] (vec (sort (map :source/url (vals sources)))))
 
 (defn law-ids
-  "e-Gov law ids for the statutes here, for `tools/verify_citations.cljs`."
+  "e-Gov law ids for the statutes here, for `tools/verify_citations.cljk`."
   []
   (vec (sort (keep :law/id (vals sources)))))
 

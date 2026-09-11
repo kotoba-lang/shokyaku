@@ -1,7 +1,7 @@
 #!/usr/bin/env nbb
 ;; Check every statute cited by `kotoba.shokyaku` against the e-Gov corpus.
 ;;
-;;   nbb tools/verify_citations.cljs [path/to/jp.go.e-gov.elaws]
+;;   nbb tools/verify_citations.cljk [path/to/jp.go.e-gov.elaws]
 ;;
 ;; Default corpus path assumes the kotoba-lang workspace layout
 ;; (`../jp.go.e-gov.elaws`), the same convention taxlaw/worklaw use.
@@ -36,7 +36,7 @@
             ["path" :as path]))
 
 (def ^:private default-corpus "../jp.go.e-gov.elaws")
-(def ^:private src "src/kotoba/shokyaku.cljc")
+(def ^:private src "src/kotoba/shokyaku.cljk")
 
 (defn- law-ids-from-source
   "Read the cited law ids out of the .cljc rather than requiring the
