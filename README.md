@@ -114,7 +114,7 @@ implemented.
 when that corpus is absent, rather than reporting zero problems.
 
 ```
-$ nbb tools/verify_citations.cljk ../jp.go.e-gov.elaws
+$ kbb --backend sci tools/verify_citations.cljk ../jp.go.e-gov.elaws
 CORPUS  ../jp.go.e-gov.elaws/index/laws.edn  9536 laws
 SCANNED  3
   ok   340AC0000000034  :law.status/superseded-revision  法人税法
@@ -212,11 +212,11 @@ cannot. A reader conditional whose `:cljs` branch nothing evaluates is the
 appearance of portability.
 
 ```bash
-clojure -M:test                                   # JVM
-nbb --classpath src:test test/run_portable.cljk   # nbb
+kbb -M:test                                   # JVM
+kbb --backend sci --classpath src:test test/run_portable.cljk   # nbb
 
 # and from a FOREIGN working directory, which is the one that matters
-cd /tmp/elsewhere && nbb --classpath "$REPO/src:$REPO/test" "$REPO/test/run_portable.cljk"
+cd /tmp/elsewhere && kbb --backend sci --classpath "$REPO/src:$REPO/test" "$REPO/test/run_portable.cljk"
 ```
 
 All three: **33 tests, 517 assertions, 0 failures.**
@@ -233,8 +233,8 @@ back nil for all 159 of iso3166's assertions.
 ## Mutation testing
 
 ```bash
-nbb tools/check-mutations.cljk   # pre-flight: every :find occurs exactly once
-nbb tools/mutate.cljk            # 15 mutations
+kbb --backend sci tools/check-mutations.cljk   # pre-flight: every :find occurs exactly once
+kbb --backend sci tools/mutate.cljk            # 15 mutations
 ```
 
 **15 mutations, 15 killed, 0 survived.** The first blind run — mutations
