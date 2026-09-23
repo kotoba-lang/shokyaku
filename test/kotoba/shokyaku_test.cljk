@@ -3,7 +3,7 @@
   those are what it is for. A depreciation library that computes correctly
   and cannot say when it does not know is a worse artifact than one that
   computes nothing."
-  (:require #?(:clj [clojure.test :refer [deftest is testing]]
+  (:require #?(:clj [kotoba.test :refer [deftest is testing]]
                :cljs [cljs.test :refer [deftest is testing]])
             [kotoba.shokyaku :as sh]))
 
