@@ -31,7 +31,7 @@
 ;;      workspace on 2026-08-13.
 
 (ns verify-citations
-  (:require [clojure.edn :as edn]
+  (:require [kotoba.lang.edn :as edn]
             ["fs" :as fs]
             ["path" :as path]))
 
