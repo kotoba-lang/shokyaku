@@ -73,7 +73,7 @@
     Read, not implemented, and recorded as out of scope rather than
     silently run through the current rules."
   (:require [kotoba.lang.text :as str]
-            [clojure.set :as set]
+            [kotoba.lang.coll :as set]
             [kotoba.shokyaku.embedded :as embedded]))
 
 ;; ---------------------------------------------------------------------------
